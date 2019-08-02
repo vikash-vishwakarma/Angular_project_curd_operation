@@ -1,0 +1,28 @@
+import { NgModule } from '@angular/core';
+import {Routes, RouterModule } from '@angular/router';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import { DriverComponent } from './driver/driver.component';
+import { FranchiseComponent } from './franchise/franchise.component';
+import { OperatorComponent } from './operator/operator.component';
+import { CustomerComponent } from './customer/customer.component';
+import { CustomerlistComponent } from './customerlist/customerlist.component';
+const routes: Routes = [
+  { path: '',  redirectTo: '/dashboard', pathMatch: 'full' },
+  {path: 'dashboard', component: DashboardComponent},
+  {path: 'customer', component: CustomerComponent},
+  {path: 'customerlist', component: CustomerlistComponent},
+  {path: 'driver', component: DriverComponent},
+  {path: 'franchise', component: FranchiseComponent},
+  {path: 'operator', component: OperatorComponent}
+  
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
+  exports:[
+    RouterModule
+  ]
+})
+export class AppRoutingModule { }
